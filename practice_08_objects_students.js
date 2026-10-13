@@ -27,19 +27,19 @@ const students = [
 //   4. Add a new property `watched` set to true
 //   5. Print each key-value pair using console.log("Title:", movie.title) style
 
-const movie = {
-  title: "Interstellar",
-  year: 2014,
-  director: "Christopher Nolan",
-  rating: "PG-13",
-  runtime: 169,
-};
+// const movie = {
+//   title: "Interstellar",
+//   year: 2014,
+//   director: "Christopher Nolan",
+//   rating: "PG-13",
+//   runtime: 169,
+// };
 
-console.log("Title:", movie.title);
-console.log("Director:", movie.director);
-console.log(">120 Minutes:", movie.runtime > 120);
-movie.watched = true;
-console.log("Watched:", movie.watched);
+// console.log("Title:", movie.title);
+// console.log("Director:", movie.director);
+// console.log(">120 Minutes:", movie.runtime > 120);
+// movie.watched = true;
+// console.log("Watched:", movie.watched);
 
 // TODO 1: Print the movie title
 // console.log(...)
@@ -72,19 +72,19 @@ console.log("Watched:", movie.watched);
 //   createStudent("Alex", 11, 3.7)  → { name: "Alex", grade: 11, gpa: 3.7, isHonors: true }
 //   createStudent("Sam",  10, 2.9)  → { name: "Sam",  grade: 10, gpa: 2.9, isHonors: false }
 
-function createStudent(name, grade, gpa) {
-  // TODO: return an object with name, grade, gpa, and isHonors
-  return {
-    name: name,
-    grade: grade,
-    gpa: gpa,
-    isHonors: gpa >= 3.5,
-  };
-}
-// Test your function — uncomment when ready:
-console.log("\n--- Problem 2 ---");
-console.log(createStudent("Alex", 11, 3.7));
-console.log(createStudent("Sam", 10, 2.9));
+// function createStudent(name, grade, gpa) {
+//   // TODO: return an object with name, grade, gpa, and isHonors
+//   return {
+//     name: name,
+//     grade: grade,
+//     gpa: gpa,
+//     isHonors: gpa >= 3.5,
+//   };
+// }
+// // Test your function — uncomment when ready:
+// console.log("\n--- Problem 2 ---");
+// console.log(createStudent("Alex", 11, 3.7));
+// console.log(createStudent("Sam", 10, 2.9));
 
 // =================================================================
 // PROBLEM 3 — Searching an Array of Objects
@@ -97,21 +97,21 @@ console.log(createStudent("Sam", 10, 2.9));
 //   findByName(students, "ChenZee") → { name: "ChenZee", grade: 12, gpa: 3.5, isHonors: false }
 //   findByName(students, "Marcus")  → null
 
-function findByName(students, targetName) {
-  // TODO: use .find() to search by name
-  // Hint: .find() returns undefined if nothing matches — convert that to null using || (or) operator
-  const found = students.find((student) => student.name === targetName);
-  if (found === undefined) {
-    return null;
-  }
-  return found;
-}
+// function findByName(students, targetName) {
+//   // TODO: use .find() to search by name
+//   // Hint: .find() returns undefined if nothing matches — convert that to null using || (or) operator
+//   const found = students.find((student) => student.name === targetName);
+//   if (found === undefined) {
+//     return null;
+//   }
+//   return found;
+// }
 
-// Test your function — uncomment when ready:
-console.log("\n--- Problem 3 ---");
-console.log(findByName(students, "ChenZee"));
-console.log(findByName(students, "Jane"));
-console.log(findByName(students, "Marcus"));
+// // Test your function — uncomment when ready:
+// console.log("\n--- Problem 3 ---");
+// console.log(findByName(students, "ChenZee"));
+// console.log(findByName(students, "Jane"));
+// console.log(findByName(students, "Marcus"));
 
 // =================================================================
 // PROBLEM 4 — Roster Report

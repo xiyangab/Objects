@@ -104,3 +104,29 @@ const catalog = [
     price: 15,
   },
 ];
+
+function filter(array, category) {
+  filtered = [];
+  for (item of array) {
+    if (item.category === category) {
+      filtered.push(item.name);
+    }
+  }
+  return filtered;
+}
+
+//console.log(filter(catalog, "Graphic Tees"));
+
+let cart = [];
+
+function AddToCart(cart, item) {
+  const target = catalog.find((i) => i.name === item);
+  if (target) {
+    cart.push(target);
+  } else {
+    return "Item Not Found";
+  }
+  return cart;
+}
+
+console.log(AddToCart(cart, "Bombas Socks"));
