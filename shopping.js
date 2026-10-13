@@ -106,10 +106,12 @@ const catalog = [
 ];
 
 function filter(array, category) {
-  filtered = [];
+  let filtered = [];
   for (item of array) {
     if (item.category === category) {
       filtered.push(item.name);
+    } else {
+      return "Category Not Found";
     }
   }
   return filtered;
@@ -121,12 +123,15 @@ let cart = [];
 
 function AddToCart(cart, item) {
   const target = catalog.find((i) => i.name === item);
+  const cost = target.price;
+  let total = 0;
   if (target) {
     cart.push(target);
+    total += cost;
   } else {
     return "Item Not Found";
   }
-  return cart;
+  return [`Total: ${total}`, cart];
 }
 
 console.log(AddToCart(cart, "Bombas Socks"));
