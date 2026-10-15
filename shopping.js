@@ -120,18 +120,27 @@ function filter(array, category) {
 //console.log(filter(catalog, "Graphic Tees"));
 
 let cart = [];
-
+const result = cart.join(", ");
+let total = 0;
 function AddToCart(cart, item) {
   const target = catalog.find((i) => i.name === item);
   const cost = target.price;
-  let total = 0;
   if (target) {
-    cart.push(target);
+    cart.push(target.name);
     total += cost;
   } else {
     return "Item Not Found";
   }
-  return [`Total: ${total}`, cart];
+  return `Total: ${total}\nCart:\n${result}`;
 }
 
 console.log(AddToCart(cart, "Bombas Socks"));
+console.log(AddToCart(cart, "Nike Socks"));
+
+function RemoveFromCart(cart, item) {
+  if (cart.includes(item)) {
+    cart.pop(item);
+  } else {
+    return "Item Not In Array";
+  }
+}
