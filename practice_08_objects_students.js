@@ -127,13 +127,21 @@ const students = [
 // Try solving without the honors first THEN try the star
 
 function printRoster(students) {
-  // TODO: loop through students with .forEach()
-  // TODO: print each student in the format above
+  students.forEach(function (student) {
+    if (student.isHonors === true) {
+      console.log(
+        `[Grade ${student.grade}] ${student.name} — GPA: ${student.gpa} ★`,
+      );
+    } else {
+      console.log(
+        `[Grade ${student.grade}] ${student.name} — GPA: ${student.gpa}`,
+      );
+    }
+  });
 }
-
 // Test your function — uncomment when ready:
-// console.log("\n--- Problem 4 ---");
-// printRoster(students);
+console.log("\n--- Problem 4 ---");
+printRoster(students);
 
 // =================================================================
 // PROBLEM 5 — Object Inspector
