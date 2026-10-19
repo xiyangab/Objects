@@ -66,6 +66,13 @@ function RemoveFromCart(cart, item) {
   return `Total: ${total}\nCart:\n${result}`;
 }
 
-console.log(AddToCart(cart, "Bombas Socks"));
-console.log(AddToCart(cart, "Nike Socks"));
-console.log(RemoveFromCart(cart, "Nike Socks"));
+function PrintTotal(cart) {
+  let total = 0;
+  for (item of cart) {
+    const target = catalog.find((i) => i.name === item);
+    const cost = target.price;
+    total += cost;
+  }
+
+  return `Total: ${total}`;
+}
