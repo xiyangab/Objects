@@ -67,12 +67,11 @@ function RemoveFromCart(cart, item) {
 }
 
 function PrintTotal(cart) {
-  let total = 0;
-  for (item of cart) {
-    const target = catalog.find((i) => i.name === item);
-    const cost = target.price;
-    total += cost;
-  }
+  // for (item of cart) {
+  //   const target = catalog.find((i) => i.name === item);
+  //   const cost = target.price;
+  //   total += cost;
+  // }
 
   return `Total: ${total}`;
 }
