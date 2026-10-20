@@ -26,6 +26,10 @@ const catalog = [
   { category: "Socks", name: "Bombas Socks", price: 15, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxRfE6MWWl5RfxHgq7p1YkWC64gDdFDIBTLUg9y7Azfw&s" },
 ];
 
+let cart = [];
+let total = 0;
+let discountCode = ["SAVE10", "XIYANGISHANDSOME", "ILOVEXIYANG"];
+
 function filter(array, category) {
   let filtered = [];
   for (item of array) {
@@ -38,8 +42,6 @@ function filter(array, category) {
   return filtered;
 }
 
-let cart = [];
-let total = 0;
 function AddToCart(cart, item) {
   const target = catalog.find((i) => i.name === item);
   const cost = target.price;
@@ -52,6 +54,10 @@ function AddToCart(cart, item) {
   const result = cart.join(", ");
   return `Total: ${total}\nCart:\n${result}`;
 }
+
+console.log(AddToCart(cart, "Nike Sports Shoes"));
+console.log(AddToCart(cart, "Adidas Sports Shoes"));
+console.log(AddToCart(cart, "Crocs"));
 
 function RemoveFromCart(cart, item) {
   const target = catalog.find((i) => i.name === item);
@@ -75,3 +81,15 @@ function PrintTotal(cart) {
 
   return `Total: ${total}`;
 }
+
+function UseDiscount(code) {
+  if (discountCode.find((c) => c === code)) {
+    total = total * 0.9;
+    return "Discount Activated";
+  } else {
+    return "Discount Not Valid";
+  }
+}
+
+console.log(UseDiscount("ILOVEXIYANG"));
+console.log(total);
