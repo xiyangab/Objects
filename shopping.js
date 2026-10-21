@@ -28,11 +28,46 @@ const catalog = [
 
 let cart = {};
 
-function addToCart(item) {
-  if (cart[item.name.quantity]) {
-    cart[item.name].quantity++;
+function filter(array, category) {
+  let filtered = [];
+  for (const item of array) {
+    if (item.category === category) {
+      filtered.push(item.name);
+    }
   }
+  if (filtered.length === 0) {
+    return "Category Not Found";
+  }
+
+  return filtered;
+}
+
+function addToCart(item) {
+  const target = catalog.find((i) => i.name === item.name);
+  if (!target) {
+    return `Item \"${item.name}\" Not Found`;
+  }
+
+  if (!cart[item.name]) {
+    cart[item.name] = {
+      quantity: 0,
+    };
+  }
+
+  cart[item.name].quantity += item.quantity;
   return cart;
 }
 
+function printCart(cart) {
+  for (const key in cart) {
+    console.log(`${key} X ${cart[key].quantity}`);
+  }
+}
+
 console.log(addToCart({ name: "Nike Sports Shoes", quantity: 1 }));
+console.log(addToCart({ name: "Nike Socks", quantity: 2 }));
+console.log(addToCart({ name: "Nike Socks", quantity: 2 }));
+console.log(addToCart({ name: "Nike Saaaocks", quantity: 2 }));
+
+printCart(cart);
+console.log(filter(catalog, "Socks"));
