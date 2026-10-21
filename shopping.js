@@ -27,6 +27,24 @@ const catalog = [
 ];
 
 let cart = {};
+let total = 0;
+let discountCode = ["SAVE10", "XIYANGISHANDSOME", "ILOVEXIYANG"];
+
+function UseDiscount(code) {
+  if (discountCode.find((c) => c === code)) {
+    total = total * 0.9;
+    return "Discount Activated";
+  } else {
+    return "Discount Not Valid";
+  }
+}
+
+function PrintTotal() {
+  return `Total: ${total}`;
+}
+
+console.log(UseDiscount("ILOVEXIYANG"));
+console.log(total);
 
 function filter(array, category) {
   let filtered = [];
