@@ -82,6 +82,8 @@ function printCart(cart) {
   }
 }
 
+function printTotal(cart) {}
+
 console.log(addToCart({ name: "Nike Sports Shoes", quantity: 1 }));
 console.log(addToCart({ name: "Nike Socks", quantity: 2 }));
 console.log(addToCart({ name: "Nike Socks", quantity: 2 }));
